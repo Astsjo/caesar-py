@@ -15,7 +15,7 @@ def caesar_encrypt(message, key):
         except ValueError:
             encrypted_message += " "
 
-    print(encrypted_message)
+    return encrypted_message
 
 def caesar_decrypt(message, key):
     alfabet = "abcdefghijklmnopqrstuvwxyzåäö"
@@ -34,7 +34,7 @@ def caesar_decrypt(message, key):
         except ValueError:
             decrypted_message += " "
 
-    print(decrypted_message)
+    return decrypted_message
 
 user_input = input("Fras: ").lower()
 while True:
@@ -54,8 +54,10 @@ while True:
         print("Vänligen välj ett alternativ.")
 
 if crypt == 1:
-    caesar_encrypt(user_input, keys)
+    encrypted_message = caesar_encrypt(user_input, keys)
+    print(encrypted_message)
 elif crypt == 2:
-    caesar_decrypt(user_input, keys)
+    decrypted_message = caesar_decrypt(user_input, keys)
+    print(decrypted_message)
 else:
     print("Du valde inget alternativ. Avslutar...")
