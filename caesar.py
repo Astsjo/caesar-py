@@ -6,12 +6,15 @@ def caesar_encrypt(message, key):
     space=""
 
     for letters in range(len(message)):
-        letter = message[letters]
-        position = alfabet.index(letter)
-        encryption = (position + key) % len(alfabet)
-        resultat = alfabet[encryption]
-        encrypted_message += resultat
+        try:
+            letter = message[letters]
+            position = alfabet.index(letter)
+            encryption = (position + key) % len(alfabet)
+            resultat = alfabet[encryption]
+            encrypted_message += resultat
+        except ValueError:
+            encrypted_message += " "
 
     print(encrypted_message)
 
-caesar_encrypt("hej", 1)
+caesar_encrypt("hej hej", 1)
